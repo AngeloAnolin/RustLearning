@@ -24,4 +24,9 @@ fn main() {
   const PI:f64 = 3.14;
   println!("Constant variable value is {}", PI);
 
+  // Chapter 3 Section 7 Booleans and Logical Operators
+  const CONSTANT_3:i32 = 3;
+  const CONSTANT_ANOTHER_3:i32 = 3;
+  const ARE_THEY_EQUAL:bool = CONSTANT_3 == CONSTANT_ANOTHER_3;
+  println!("CONSTANT_3 with value {} is a {} equal to CONSTANT_ANOTHER_3 whose value is {}", CONSTANT_3, ARE_THEY_EQUAL, CONSTANT_ANOTHER_3);
 }
