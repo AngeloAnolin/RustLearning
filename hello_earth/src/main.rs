@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
   let _variable_name = 1;
   println!("Hello, Earth! This is a Rust Application.");
@@ -80,7 +82,7 @@ fn main() {
   // Create empty string
   let mut input_text = String::new();
 
-  std::io::stdin()
+  io::stdin()
     .read_line(&mut input_text)
     .expect("Failed to read input");
   
