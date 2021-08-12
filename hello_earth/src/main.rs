@@ -76,6 +76,18 @@ fn main() {
   let string_message = string_text + " World";
   println!("{}", string_message);
 
+  // Chapter 3 Section 16 Reading Input from the User
+  // Create empty string
+  let mut input_text = String::new();
+
+  std::io::stdin()
+    .read_line(&mut input_text)
+    .expect("Failed to read input");
+  
+  let converted_to_number: u32 = input_text.trim().parse().expect("Value entered is not a number.");
+  
+  println!("Value entered is {}", input_text);
+  println!("Value converted to number multiplied by 2 is {}", converted_to_number * 2);
 }
 
 fn multiply_number(x:i32, y:i32) -> i32 {
