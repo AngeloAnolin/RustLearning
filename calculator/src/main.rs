@@ -1,6 +1,23 @@
 use std::io;
 
 fn main() {
+  let mut continue_choice = String::new();
+
+  loop {
+    calculator();
+    println!("Operation completed. Do you want to continue? (Y - Yes | N - No)");
+    io::stdin()
+    .read_line(&mut continue_choice)
+    .expect("Failed to read first number");
+
+    if continue_choice.trim().to_uppercase() == "N" {
+      break;
+    }
+  }
+  
+}
+
+fn calculator () {
   let mut first_number = String::new();
   let mut second_number = String::new();
   let mut operation = String::new();
