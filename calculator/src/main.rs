@@ -25,7 +25,7 @@ fn main() {
     .parse()
     .expect("Second value entered is not a number.");
   
-  println!("Please enter the operation to perform (Add, Subtract, Multiply, Divide).");
+  println!("Please enter the operation to perform (Add, Subtract, Multiply, Divide, Exponent).");
   io::stdin()
     .read_line(&mut operation)
     .expect("Failed to read operation to perform.");
@@ -39,11 +39,14 @@ fn main() {
     let diff:f32 = converted_first_number - converted_second_number;
     println!("The difference of {} and {} is {:.4}", converted_first_number, converted_second_number, diff);
   } else if operation.trim().to_uppercase() == "MULTIPLY" {
-    let prod = converted_first_number * converted_second_number;
+    let prod:f32 = converted_first_number * converted_second_number;
     println!("The product of {} and {} is {:.4}", converted_first_number, converted_second_number, prod);
   } else if operation.trim().to_uppercase() == "DIVIDE" {
-    let quotient = converted_first_number / converted_second_number;
+    let quotient:f32 = converted_first_number / converted_second_number;
     println!("The quotient of {} and {} is {:.4}", converted_first_number, converted_second_number, quotient);
+  } else if operation.trim().to_uppercase() == "EXPONENT" {
+    let exponent:f32 =  converted_first_number.powf(converted_second_number);
+    println!("The number {} raised by {} is {:.4}", converted_first_number, converted_second_number, exponent);
   } else {
     println!("Operation entered {} is not yet in system", operation.trim().to_uppercase());
   }
