@@ -14,6 +14,14 @@ fn main() {
       break;
     }
   }
+
+  let test_string = String::from("Spaceman");
+  let test_length = calculate_length(&test_string);
+  println!("The number of characters in the word {} is {}", test_string, test_length);
+
+  let mut ref_string = String::from("Los Angeles");
+  replace_reference(&mut ref_string);
+  println!("My team is {}", ref_string);
   
 }
 
@@ -67,6 +75,14 @@ fn calculator () {
   } else {
     println!("Operation entered {} is not yet in system", operation.trim().to_uppercase());
   }
+}
+
+fn calculate_length (s: &String) -> usize {
+  return s.len();
+}
+
+fn replace_reference (s: &mut String) {
+  s.push_str(" Lakers");
 }
 
 // Algorithm
