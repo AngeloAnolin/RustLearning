@@ -46,4 +46,20 @@ fn main() {
 
     println!("Reading month {} in reverse is {}", k, k_reversed);
   }
+
+  // Call function chapter6 on tuples
+  chapter6_tuples();
+}
+
+fn chapter6_tuples () {
+  // Tuple allow variables inside the set to be different.
+  let tuple_var = (1, 2.5, 3, "String");
+  println!("Position 0 is {}", tuple_var.0);
+  println!("Position 3 is {}", tuple_var.3);
+
+  // When the type is declared for tuples, it should match.
+  let tuple_declare: (u32, &str, i32) = (100, "Hello", -100);
+  println!("Item at 0 is {}", tuple_declare.0);
+  println!("Item at 1 is {}", tuple_declare.1);
+
 }
