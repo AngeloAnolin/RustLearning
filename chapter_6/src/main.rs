@@ -49,6 +49,9 @@ fn main() {
 
   // Call function chapter6 on tuples
   chapter6_tuples();
+
+  // Call function to chapter6 on vectors.
+  chapter6_vectors();
 }
 
 fn chapter6_tuples () {
@@ -62,4 +65,25 @@ fn chapter6_tuples () {
   println!("Item at 0 is {}", tuple_declare.0);
   println!("Item at 1 is {}", tuple_declare.1);
 
+}
+
+fn chapter6_vectors () {
+  // Declare vector.
+  let mut vector_var = vec![2, 4, 6, 8, 10];
+  vector_var.push(20);
+  println!("Vector value is: {:?}", vector_var);
+
+  vector_var.push(100);
+  println!("After push 100 to vector, the value now is: {:?}", vector_var);
+
+  // Similar to array, iterating through vectors can be done:
+  for i in &vector_var {
+    println!("Value of i is {}", i);
+  }
+
+  let vector_var_iter = vector_var.iter();
+
+  for j in vector_var_iter {
+    println!("Reading j {}", j);
+  }
 }
