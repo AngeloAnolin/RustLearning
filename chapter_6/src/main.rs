@@ -32,11 +32,18 @@ fn main() {
   // the reference to the heap where the variable points to 
   // is already gone.
   let string_list_iter_clone = string_list_iter.clone();
-
+  let string_list_iter_clone_reverse = string_list_iter.clone();
   println!("variable string_list has {} elements.", string_list_iter.count());
 
   
   for j in string_list_iter_clone {
     println!("Month {} has {} characters", j, j.len());
+  }
+
+  // Read iteration from end to start and reverse the characters as well.
+  for k in string_list_iter_clone_reverse.rev() {
+    let k_reversed = k.chars().rev().collect::<String>();
+
+    println!("Reading month {} in reverse is {}", k, k_reversed);
   }
 }
