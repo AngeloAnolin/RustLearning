@@ -1,3 +1,20 @@
+// Section 6 Structures
+struct Rectangle {
+  width: u32,
+  height: u32
+}
+
+impl Rectangle {
+  // &self is a reference to the object (rectangle) itself.
+  fn area(&self) -> u32 {
+    return self.width * self.height;
+  }
+
+  fn perimeter(&self) -> u32 {
+    2 * (self.height + self.width)
+  }
+}
+
 fn main() {
   let numbers_list = [1, 2, 3, 4, 5];
   let string_list = [
@@ -52,6 +69,9 @@ fn main() {
 
   // Call function to chapter6 on vectors.
   chapter6_vectors();
+
+  // Call function to chapter6 on structures
+  chapter6_structures();
 }
 
 fn chapter6_tuples () {
@@ -86,4 +106,14 @@ fn chapter6_vectors () {
   for j in vector_var_iter {
     println!("Reading j {}", j);
   }
+}
+
+fn chapter6_structures () {
+  let rectangle = Rectangle{
+    width: 20,
+    height: 20
+  };
+
+  println!("The area of the rectangle is {}", rectangle.area());
+  println!("The perimeter of the rectangle with width of {} and height of {} is {}", rectangle.width, rectangle.height, rectangle.perimeter());
 }
