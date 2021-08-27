@@ -72,6 +72,9 @@ fn main() {
 
   // Call function to chapter6 on structures
   chapter6_structures();
+
+  // Call function to chapter6 on enums
+  chapter6_enums();
 }
 
 fn chapter6_tuples () {
@@ -116,4 +119,21 @@ fn chapter6_structures () {
 
   println!("The area of the rectangle is {}", rectangle.area());
   println!("The perimeter of the rectangle with width of {} and height of {} is {}", rectangle.width, rectangle.height, rectangle.perimeter());
+}
+
+fn chapter6_enums () {
+  // Enums are provided a value automatically (0, 1, 2 ...)
+  enum Burger {
+    Small,
+    Medium,
+    Large
+  }
+
+  let small_burger = Burger::Small;
+  let medium_burger = Burger::Medium;
+  let large_burger = Burger::Large;
+
+  println!("Small is {}", small_burger as i32);
+  println!("Medium is {}", medium_burger as i32);
+  println!("Large is {}", large_burger as i32);
 }
